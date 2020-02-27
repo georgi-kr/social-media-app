@@ -1,0 +1,52 @@
+<form class="search" (ngSubmit)="this.closeNav()" autocomplete="off">
+  <div class="search-input">
+    <input
+      class="search-type-field"
+      type="text"
+      placeholder="Search..."
+      name="search-input"
+      (input)="emitToSubject($event.target.value)"
+      (input)="this.showResults()"
+      (input)="this.closeResults($event.target.value)"
+      [(ngModel)]="this.inputValue"
+    />
+    <div id="select-search" class="select" (click)="this.toggleSearchMenu()">
+      <div
+        class="select-opt"
+        *ngIf="this.searchType === 'users' || this.showDropdown"
+        (click)="this.changeSearchType($event.target.innerText)"
+      >
+        users
+      </div>
+      <div
+        class="select-opt"
+        *ngIf="this.searchType === 'posts' || this.showDropdown"
+        (click)="this.changeSearchType($event.target.innerText)"
+      >
+        posts
+      </div>
+    </div>
+    <i class="material-icons" *ngIf="!showUsersResults">search</i>
+    <i
+      class="material-icons"
+      *ngIf="showUsersResults"
+      (click)="this.toggleResults()"
+      (click)="this.clearInput()"
+    >
+      close
+    </i>
+  </div>
+  <div
+    *ngIf="this.showUsersResults"
+    class="search-results"
+    (click)="this.toggleResults()"
+  >
+    <app-minimized-user
+      *ngFor="let user of this.users"
+      [user]="user"
+      (click)="this.clearInput()"
+      (click)="this.closeNav()"
+    >
+    </app-minimized-user>
+  </div>
+</form>

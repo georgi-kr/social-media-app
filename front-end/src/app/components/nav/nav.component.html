@@ -1,0 +1,80 @@
+<header class="header-container">
+  <div class="logo" [routerLink]="[this.PATHS.HOME]">
+    <img class="logo-img" src="assets/logo.png" />
+  </div>
+  <div>
+    <i 
+      class="material-icons" 
+      *ngIf="!this.showHamMenu" 
+      (click)="toggleHam()"
+    >
+      menu
+    </i>
+    <i 
+      class="material-icons" 
+      *ngIf="this.showHamMenu"
+      (click)="toggleHam()"
+    >
+      close
+    </i>
+  </div>
+  <nav class="mid" [ngClass]="this.showHamMenu ? 'show' : 'hide'">
+    <ul class="mid">
+      <li class="search">
+        <app-search (closeMenu)="this.toggleHam()"></app-search>
+      </li>
+      <li class="menu-icon" (click)="toggleHam()">
+        <a class="menu-icon" [routerLink]="[this.PATHS.HOME]" title="Newsfeed">
+          <img src="assets/icons/Home.svg" class="icons" />
+          <span class="nav-button-info">News</span>
+        </a>
+      </li>
+      <li class="menu-icon" (click)="toggleHam()">
+        <a
+          class="menu-icon"
+          [routerLink]="[this.PATHS.POSTS, this.PATHS.CREATE]"
+          title="Create Post"
+        >
+          <img src="assets/icons/create_post.svg" class="icons" />
+          <span class="nav-button-info">Create</span>
+        </a>
+      </li>
+      <li class="menu-icon" (click)="toggleHam()">
+        <a
+          class="menu-icon"
+          [routerLink]="[this.PATHS.EXPLORE, this.PATHS.POSTS]"
+          title="Explore"
+        >
+          <img src="assets/icons/compass.svg" class="icons" />
+          <span class="nav-button-info">Explore</span>
+        </a>
+      </li>
+      <li class="menu-icon" (click)="toggleHam()">
+        <a
+          class="menu-icon"
+          [routerLink]="this.profileLink"
+          title="View Pofile"
+        >
+          <img class="icons" src="assets/icons/user.svg" />
+          <span class="nav-button-info">Profile</span>
+        </a>
+      </li>
+      <li class="menu-icon" (click)="toggleHam()" *ngIf="this.isAdmin">
+        <a
+          class="menu-icon"
+          [routerLink]="[this.PATHS.ADMIN, this.PATHS.HISTORY]"
+          title="History"
+        >
+          <img src="assets/icons/admin.svg" class="icons" />
+          <span class="nav-button-info">Admin</span>
+        </a>
+      </li>
+      <li class="menu-icon" (click)="this.logout()" (click)="toggleHam()">
+        <a class="menu-icon" title="Logout">
+          <img src="assets/icons/logout.svg" class="icons" />
+          <span class="nav-button-info">Logout</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

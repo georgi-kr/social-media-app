@@ -1,0 +1,15 @@
+<div class="keyword">
+  Showing results for <strong>"{{ this.title }}"</strong> ...
+</div>
+<div class="posts-container" id="posts-container">
+  <app-post-preview
+    class="single-post"
+    *ngFor="let post of this.posts"
+    [post]="post"
+  >
+  </app-post-preview>
+</div>
+<div class="no-posts" *ngIf="this.posts.length === 0">
+  <p class="no-posts-to-show">No posts to show!</p>
+</div>
+<div class="no-posts" *ngIf="this.ready">No more posts</div>
