@@ -6,7 +6,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material';
 
-import { MaterialModule } from './material/material.module';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -15,17 +14,17 @@ import { TokenInterceptorService } from './common/auth/token-interceptor.service
 import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './components/users/login/login.component';
-import { RegisterComponent } from './components/users/register/register.component';
-import { UsersModule } from './components/users/users.module';
-import { HomepageComponent } from './components/homepage/homepage.component';
-import { ConformationDialogBoxComponent } from './shared/conformation-dialog-box/conformation-dialog-box.component';
-import { SharedModule } from './shared/shared.module';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { PostDetailPreviewComponent } from './components/post/post-detail-preview/post-detail-preview.component';
+import { LoginComponent } from './features/authentication/login/login.component';
+import { RegisterComponent } from './features/authentication/register/register.component';
+import { UsersModule } from './features/users/users.module';
+import { HomepageComponent } from './features/homepage/homepage.component';
+import { ConformationDialogBoxComponent } from './shared-components/conformation-dialog-box/conformation-dialog-box.component';
+import { SharedModule } from './shared-components/shared.module';
+import { NotFoundComponent } from './features/error-pages/not-found/not-found.component';
+import { PostDetailPreviewComponent } from './features/post/components/post-detail-preview/post-detail-preview.component';
 import { ServerErrorInterceptor } from './common/exceptons/server-error';
-import { ServerErrorComponent } from './components/server-error/server-error.component';
-import { NavModule } from './components/nav/nav.module';
+import { ServerErrorComponent } from './features/error-pages/server-error/server-error.component';
+import { NavModule } from './features/nav/nav.module';
 
 @NgModule({
   declarations: [
@@ -37,18 +36,17 @@ import { NavModule } from './components/nav/nav.module';
     ServerErrorComponent,
   ],
   imports: [
-    NgxSpinnerModule,
-    MatDialogModule,
-    NavModule,
     CoreModule,
     CommonModule,
-    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    MaterialModule,
-    HttpClientModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    NgxSpinnerModule,
+    MatDialogModule,
+    NavModule,
     UsersModule,
     ToastrModule.forRoot({
       timeOut: 3000,

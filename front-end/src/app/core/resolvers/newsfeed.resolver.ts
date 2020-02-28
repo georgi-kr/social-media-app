@@ -1,5 +1,5 @@
 import { Resolve } from '@angular/router';
-import { PostsDataService } from '../../components/post/services/posts-data.service';
+import { PostsDataService } from '../../features/post/services/posts-data.service';
 import { Injectable } from '@angular/core';
 
 @Injectable()

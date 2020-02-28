@@ -1,7 +1,8 @@
 :root {
-  --color-accent-main: rgb(72, 231, 168);
-  --color-secondary: rgb(255, 255, 255);
-  --color-error: rgb(255, 0, 0);
-  --color-disabled: rgb(204, 204, 204);
-  --color-main-accent-lighter: rgb(138, 239, 200);
+  --color-accent-main: 72, 231, 168;
+  --color-secondary: 255, 255, 255;
+  --color-error: 255, 0, 0;
+  --color-disabled: 204, 204, 204;
+  --color-main-accent-lighter: 138, 239, 200;
+  --color-button-inshadow: 0, 0, 0, 0.5
 }

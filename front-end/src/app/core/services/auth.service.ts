@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { User } from '../../components/users/models/user';
-import { UserLoginDTO } from '../../components/users/models/user-login-dto';
-import { UserRegisterDTO } from '../../components/users/models/user-register-dto';
+import { User } from '../../features/users/models/user';
+import { UserLoginDTO } from '../../features/users/models/user-login-dto';
+import { UserRegisterDTO } from '../../features/users/models/user-register-dto';
 import { CONFIG } from '../../config/config';
 
 @Injectable()

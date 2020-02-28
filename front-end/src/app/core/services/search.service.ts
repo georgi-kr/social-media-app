@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-import { ShowDetailedInfoDTO } from '../../components/users/models/show-detailed-info.dto';
-import { PostDTO } from 'src/app/components/post/models/post.dto';
+import { ShowDetailedInfoDTO } from '../../features/users/models/show-detailed-info.dto';
+import { PostDTO } from 'src/app/features/post/models/post.dto';
 import { CONFIG } from '../../config/config';
 
 @Injectable()

@@ -4,11 +4,11 @@ import {
   RouterStateSnapshot,
   Router,
 } from '@angular/router';
-import { PostsDataService } from '../../components/post/services/posts-data.service';
+import { PostsDataService } from '../../features/post/services/posts-data.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { PostDTO } from 'src/app/components/post/models/post.dto';
+import { PostDTO } from 'src/app/features/post/models/post.dto';
 
 @Injectable()
 export class SinglePostResolver implements Resolve<any> {
