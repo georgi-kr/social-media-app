@@ -4,5 +4,6 @@
   --color-error: 255, 0, 0;
   --color-disabled: 204, 204, 204;
   --color-main-accent-lighter: 138, 239, 200;
-  --color-button-inshadow: 0, 0, 0, 0.5
+  --color-button-inshadow: 0, 0, 0, 0.5;
+  --color-text-accent: 0, 0, 0;
 }

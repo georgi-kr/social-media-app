@@ -120,13 +120,6 @@ form {
   font-size: 2rem;
 }
 
-.error {
-  z-index: 10;
-  position: absolute;
-  bottom: -1.5em;
-  font-size: 0.8em;
-}
-
 output.error {
   position: absolute;
   bottom: -3em;

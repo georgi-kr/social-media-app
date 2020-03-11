@@ -38,5 +38,6 @@ h5 {
 }
 
 button {
-  all: unset
+  all: unset;
+  box-sizing: border-box;
 }

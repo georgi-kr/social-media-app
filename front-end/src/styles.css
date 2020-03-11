@@ -1,5 +1,6 @@
 @import './app/styles/_normalize.css';
 @import './app/styles/_variables.css';
+@import './app/styles/_shared.css';
 
 html {
   height: 100%;

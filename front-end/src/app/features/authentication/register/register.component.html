@@ -75,11 +75,13 @@
       </div>
     </div>
     <button
+      class="raised-button"
       type="button"
       (click)="register()"
-      [disabled]="!registerForm.valid || !passwordFormGroup.valid"
-    >
+      >
       Create an account
     </button>
   </form>
 </div>
+
+<!-- [disabled]="!registerForm.valid || !passwordFormGroup.valid" -->
