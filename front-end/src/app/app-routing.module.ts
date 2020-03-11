@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AuthGuard } from './common/auth/auth.guard';
 import { AdminGuard } from './common/auth/admin.guard';
-import { ServerErrorComponent } from './components/server-error/server-error.component';
-import { HomepageComponent } from './components/homepage/homepage.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ServerErrorComponent } from './features/error-pages/server-error/server-error.component';
+import { HomepageComponent } from './features/homepage/homepage.component';
+import { NotFoundComponent } from './features/error-pages/not-found/not-found.component';
 
 import { PATHS } from './common/constants/paths';
 
@@ -18,20 +18,20 @@ const routes: Routes = [
     path: PATHS.HOME,
     canActivate: [AuthGuard],
     loadChildren: () =>
-      import('./components/newsfeed/newsfeed.module').then(
+      import('./features/newsfeed/newsfeed.module').then(
         m => m.NewsfeedModule
       ),
   },
   {
     path: PATHS.EXPLORE,
     loadChildren: () =>
-      import('./components/explore/explore.module').then(m => m.ExploreModule),
+      import('./features/explore/explore.module').then(m => m.ExploreModule),
   },
   {
     path: PATHS.ADMIN,
     canActivate: [AuthGuard, AdminGuard],
     loadChildren: () =>
-      import('./components/admin-history/admin-history.module').then(
+      import('./features/admin-history/admin-history.module').then(
         m => m.AdminHistoryModule
       ),
   },
@@ -39,13 +39,13 @@ const routes: Routes = [
     path: PATHS.USERS,
     canActivate: [AuthGuard],
     loadChildren: () =>
-      import('./components/users/users.module').then(m => m.UsersModule),
+      import('./features/users/users.module').then(m => m.UsersModule),
   },
   {
     path: PATHS.POSTS,
     canActivate: [AuthGuard],
     loadChildren: () =>
-      import('./components/create-post/create-post.module').then(
+      import('./features/create-post/create-post.module').then(
         m => m.CreatePostModule
       ),
   },
@@ -53,7 +53,7 @@ const routes: Routes = [
     path: PATHS.SEARCH,
     canActivate: [AuthGuard],
     loadChildren: () =>
-      import('./components/search-results/search-results.module').then(
+      import('./features/search/components/search-results/search-results.module').then(
         m => m.SearchResultsModule
       ),
   },
