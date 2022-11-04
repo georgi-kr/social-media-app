@@ -1,0 +1,14 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { SearchResultsComponent } from './search-results.component';
+import { PATHS } from 'src/app/common/constants/paths';
+
+const routes: Routes = [
+  { path: '', component: SearchResultsComponent },
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+export class SearchResultsRoutingModule {}

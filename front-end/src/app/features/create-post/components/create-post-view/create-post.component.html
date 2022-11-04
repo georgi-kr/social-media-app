@@ -1,0 +1,61 @@
+<div class="form-wrapper">
+  <form
+    class="wrapper"
+    [formGroup]="uploadForm"
+    (ngSubmit)="this.onFormSubmit()"
+  >
+    <div class="photo-sec">
+      <app-upload-image-post (sendBase64)="this.imageCropped($event)">
+      </app-upload-image-post>
+    </div>
+    <div class="options">
+      Description:
+      <textarea
+        class="description"
+        type="text"
+        placeholder="Write a description..."
+        [(ngModel)]="this.description"
+        formControlName="description"
+      >
+      </textarea>
+      <div
+        class="textarea-error"
+        *ngIf="uploadForm.controls.description?.errors?.maxlength"
+      >
+        *Max symbols {{ this.maxLength }}
+      </div>
+      <span class="label">Status:</span>
+      <div class="status" id="status">
+        <div>
+          <input
+            id="private"
+            type="radio"
+            name="status"
+            (click)="this.flagAsPrivate()"
+          />
+          <label class="status-label" for="private">Private</label>
+        </div>
+        <div>
+          <input
+            id="public"
+            type="radio"
+            name="status"
+            (click)="this.flagAsPublic()"
+            checked
+          />
+          <label for="public">Public</label>
+        </div>
+      </div>
+      <div class="img-reqired-error" *ngIf="!this.imgUrl">
+        *Select image
+      </div>
+      <button
+        type="submit"
+        class="create-post"
+        [disabled]="!uploadForm.valid || !this.imgUrl"
+      >
+        Create Post
+      </button>
+    </div>
+  </form>
+</div>

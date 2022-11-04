@@ -1,0 +1,62 @@
+form {
+  width: 100%;
+}
+
+.register-form {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 100%;
+  padding: 4rem 3rem;
+  padding-top: 0.5rem;
+  border-radius: 3rem;
+  box-shadow: 0.09rem 0.09rem 0.5rem rgba(var(--color-disabled));
+  background-color: rgba(var(--color-secondary), 0.7);
+}
+
+img.logo {
+  width: 50%;
+  margin-top: 30px;
+}
+
+.welcome {
+  color: rgba(var(--color-text-accent));
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+input {
+  width: 100%;
+  font-size: 1.2rem;
+  border: none;
+  background-color: transparent;
+}
+input:focus {
+  outline: none;
+}
+
+.username,
+.password,
+.email {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  border-bottom: 0.1rem solid rgba(var(--color-disabled));
+}
+
+.material-icons {
+  color: rgba(var(--color-disabled));
+  font-size: 2rem;
+}
+
+.error {
+  position: absolute;
+  bottom: -1.5em;
+  color: rgba(var(--color-error));
+  font-size: 0.8em;
+  z-index: 10;
+}
+
